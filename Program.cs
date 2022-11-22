@@ -1,6 +1,6 @@
 ﻿// Создадим массив через random
 Random rnd = new Random();
-int minR = 1; int maxR = 10;
+int minR = 2; int maxR = 5;
 int rows = rnd.Next(minR,maxR); int columns = rows+2; // строки и колонки массива 
 int rowC = 0;
 int[,] matrixA = new int[rows,columns]; // массив A
@@ -9,42 +9,43 @@ if (rows<columns)
     rowC = rows;
 else
     rowC = columns;
-int[,] matrixC = new int[rowC,rowC];
+int[,] matrixC = new int[rows,columns];
 int minRnd = 1; int maxRnd = 10; // для random
+int[,] test1 = {{2,4},{3,2}};
+int[,] test2 = {{3,4},{3,3}};
+int[,] test3 = new int[2,2];
 //
-FillRandomArray(matrixA);
+/*FillRandomArray(matrixA);
 Print2DArray(matrixA);
 
 Console.WriteLine();
 FillRandomArray(matrixB);
 Print2DArray(matrixB);
 
-PowerMatrix(matrixA,matrixB,matrixC);
+PowerMatrix(matrixA,matrixB,matrixC);*/
+PowerMatrix(test1,test2,test3);
 Console.WriteLine();
 
-Print2DArray(matrixC);
+//Print2DArray(matrixC);
+Print2DArray(test3);
 
 
 // Функции
 void PowerMatrix(int[,] A, int[,] B, int[,] C)
 {
-    for(int Ai = 0; Ai < A.GetLength(0); Ai++)
+    for(int Ci = 0; Ci < C.GetLength(0); Ci++)
     {
-        for(int Aj = 0; Aj < A.GetLength(1); Aj++)
+        for(int Cj = 0; Cj < C.GetLength(1); Cj++)
         {   
-            for(int Bj = 0; Bj < B.GetLength(1); Bj++)
-            {
-                for(int Bi = 0; Bi < B.GetLength(0); Bi++)
-                {  
-                    
-                    C[Ai,Bj]+= A[Ai,Aj]*B[Bi,Bj];
-                    Console.Write($"C[{Ai},{Bj}]+=A[{Ai},{Aj}]*B[{Bi},{Bj}]");
-                    Console.WriteLine();
-                }
+            Console.Write($"C[{Ci},{Cj}] = ");
+            for(int j = 0; j < A.GetLength(1); j++)
+            {  
+                
+                C[Ci,Cj]+= A[Ci,j]*B[j,Cj];
+                Console.Write($" + A[{Ci},{j}]*B[{j},{Cj}]");
+                
             }
-            /*C[Ai,Bj]+= A[Ai,Aj]*B[Bi,Bj];
-            Console.Write($"C[{Ai},{Bj}]+=A[{Ai},{Aj}]*B[{Bi},{Bj}]");
-            Console.WriteLine();*/
+            Console.WriteLine(); 
         }
     }
 }
