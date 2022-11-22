@@ -1,7 +1,7 @@
 ﻿// Создадим массив через random
 Random rnd = new Random();
 int minR = 2; int maxR = 5;
-int rows = rnd.Next(minR,maxR); int columns = rows+2; // строки и колонки массива 
+int rows = rnd.Next(minR,maxR); int columns = rows; // строки и колонки массива 
 int rowC = 0;
 int[,] matrixA = new int[rows,columns]; // массив A
 int[,] matrixB = new int[columns,rows]; // массив B
@@ -15,19 +15,19 @@ int[,] test1 = {{2,4},{3,2}};
 int[,] test2 = {{3,4},{3,3}};
 int[,] test3 = new int[2,2];
 //
-/*FillRandomArray(matrixA);
+FillRandomArray(matrixA);
 Print2DArray(matrixA);
 
 Console.WriteLine();
 FillRandomArray(matrixB);
 Print2DArray(matrixB);
 
-PowerMatrix(matrixA,matrixB,matrixC);*/
-PowerMatrix(test1,test2,test3);
+PowerMatrix(matrixA,matrixB,matrixC);
+//PowerMatrix(test1,test2,test3);
 Console.WriteLine();
 
-//Print2DArray(matrixC);
-Print2DArray(test3);
+Print2DArray(matrixC);
+//Print2DArray(test3);
 
 
 // Функции
