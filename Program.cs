@@ -2,18 +2,16 @@
 Random rnd = new Random();
 int minR = 2; int maxR = 5;
 int rows = rnd.Next(minR,maxR); int columns = rows; // строки и колонки массива 
+//int columns = rnd.Next(minR, maxR);
 int rowC = 0;
 int[,] matrixA = new int[rows,columns]; // массив A
 int[,] matrixB = new int[columns,rows]; // массив B
-if (rows<columns)
-    rowC = rows;
-else
-    rowC = columns;
+
 int[,] matrixC = new int[rows,columns];
 int minRnd = 1; int maxRnd = 10; // для random
-int[,] test1 = {{2,4},{3,2}};
+/*int[,] test1 = {{2,4},{3,2}};
 int[,] test2 = {{3,4},{3,3}};
-int[,] test3 = new int[2,2];
+int[,] test3 = new int[2,2];*/
 //
 FillRandomArray(matrixA);
 Print2DArray(matrixA);
