@@ -2,12 +2,11 @@
 Random rnd = new Random();
 int minR = 2; int maxR = 5;
 int rows = rnd.Next(minR,maxR); int columns = rows; // строки и колонки массива 
-//int columns = rnd.Next(minR, maxR);
-int rowC = 0;
+
 int[,] matrixA = new int[rows,columns]; // массив A
 int[,] matrixB = new int[columns,rows]; // массив B
-
 int[,] matrixC = new int[rows,columns];
+
 int minRnd = 1; int maxRnd = 10; // для random
 /*int[,] test1 = {{2,4},{3,2}};
 int[,] test2 = {{3,4},{3,3}};
@@ -48,7 +47,6 @@ void PowerMatrix(int[,] A, int[,] B, int[,] C)
     }
 }
     
-
 void FillRandomArray(int[,] array)
 {
     Random rnd = new Random();
